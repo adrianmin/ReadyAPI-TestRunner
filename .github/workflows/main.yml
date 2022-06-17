@@ -23,6 +23,6 @@ jobs:
         with:
           node-version: "12.x"
       - name: download ReadyAPI
-        run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.0.sh -o ~/Downloads/ReadyAPI-x64-3.40.1.0.sh
+        run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.0.sh -o $GITHUB_WORKSPACE/ReadyAPI-x64-3.40.1.0.sh
     
     
