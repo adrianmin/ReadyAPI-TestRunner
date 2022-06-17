@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  Validate-Design-on-Swaggerhub:
+  ReadyAPI-Download:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,6 +23,17 @@ jobs:
         with:
           node-version: "12.x"
       - name: download ReadyAPI
+        run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.0.sh -o $GITHUB_WORKSPACE/ReadyAPI-x64-3.40.1.0.sh
+        
+  Run-ReadyAPI-Project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Nodejs 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: run ReadyAPI
         run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.0.sh -o $GITHUB_WORKSPACE/ReadyAPI-x64-3.40.1.0.sh
     
     
